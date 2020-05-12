@@ -1,12 +1,12 @@
+import { UiElementsModule } from "./../ui-elements/ui-elements.module";
 import { ProfileSettingsService } from "./profile-settings.service";
 import { NgModule } from "@angular/core";
-import { FormsModule } from "@angular/forms";
 
 import { CommonModule } from "@angular/common";
 import { ProfileSettingsComponent } from "./profile-settings.component";
 
 @NgModule({
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, UiElementsModule],
   declarations: [ProfileSettingsComponent],
   exports: [ProfileSettingsComponent],
   providers: [ProfileSettingsService],

@@ -1,24 +1,26 @@
 <div class="ProfileSettings">
   <h1>{{ title }}</h1>
   <div *ngIf="user">
-    <div>
-      <span>Username</span>:<span>{{ user?.username }}</span>
+    <div class="ProfileSettings__UserName">
+      <span>Username</span> : <span>{{ user?.username }}</span>
     </div>
     <div class="ProfileSettings__InputContainer">
-      <label>First Name</label>
-      <input type="text" [(ngModel)]="user.firstName" />
+      <app-text-input label="First Name" [(inputModel)]="user.firstName">
+      </app-text-input>
     </div>
     <div class="ProfileSettings__InputContainer">
-      <label>Last Name</label>
-      <input type="text" [(ngModel)]="user.lastName" />
+      <app-text-input label="Last Name" [(inputModel)]="user.lastName">
+      </app-text-input>
     </div>
-    <input type="button" value="Save" (click)="saveUser()" />
+    <app-button buttonText="Save" (action)="saveUser()"></app-button>
   </div>
 
-  <p *ngIf="laodingProfile">Loading Profile...</p>
+  <p *ngIf="loadingProfile">Loading Profile...</p>
   <p *ngIf="savingProfile">Saving Profile...</p>
   <p *ngIf="errorMessage">
     <span>Error! </span>
     <span>{{ errorMessage }}</span>
   </p>
+
+  <pre>{{ user | json }}</pre>
 </div>

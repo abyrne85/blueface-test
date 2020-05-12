@@ -3,10 +3,11 @@
   height: 100vh;
   display: flex;
   justify-content: center;
-  background: #eeeeee;
+  background: var(--grey);
 }
 
 .App__MainContent {
   width: 100%;
-  max-width: 720px;
+  max-width: 900px;
+  background-color: var(--white);
 }

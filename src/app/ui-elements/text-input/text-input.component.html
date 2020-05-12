@@ -1,0 +1,8 @@
+<div class="TextInput">
+  <label>{{ label }}</label>
+  <input
+    type="text"
+    [(ngModel)]="inputModel"
+    (ngModelChange)="inputModelChange.emit(inputModel)"
+  />
+</div>

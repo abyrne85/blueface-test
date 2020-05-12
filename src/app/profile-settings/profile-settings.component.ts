@@ -8,9 +8,9 @@ import { IProfile, ProfileSettingsService } from "./profile-settings.service";
 })
 export class ProfileSettingsComponent implements OnInit {
   title: string = "Profile";
-  laodingProfile: boolean = false;
-  error: boolean = false;
+  loadingProfile: boolean = false;
   savingProfile: boolean = false;
+  error: boolean = false;
   user: IProfile;
   errorMessage: string;
   constructor(private _profileSettingsService: ProfileSettingsService) {}
@@ -20,10 +20,10 @@ export class ProfileSettingsComponent implements OnInit {
   }
 
   async fetchUser() {
-    this.laodingProfile = true;
+    this.loadingProfile = true;
     try {
       this.user = await this._profileSettingsService.getProfileUser();
-      this.laodingProfile = false;
+      this.loadingProfile = false;
     } catch (error) {
       this.fetchUser();
     }

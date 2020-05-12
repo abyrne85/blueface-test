@@ -1,0 +1,4 @@
+.TextInput > label,
+.TextInput > input {
+  display: block;
+}
