@@ -1,0 +1,9 @@
+.ProfileSettings {
+  background: #dddddd;
+  padding: 1em;
+  height: 100%;
+}
+
+.ProfileSettings__InputContainer {
+  margin-bottom: 0.5em;
+}

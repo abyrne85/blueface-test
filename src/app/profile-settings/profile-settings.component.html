@@ -1,0 +1,24 @@
+<div class="ProfileSettings">
+  <h1>{{ title }}</h1>
+  <div *ngIf="user">
+    <div>
+      <span>Username</span>:<span>{{ user?.username }}</span>
+    </div>
+    <div class="ProfileSettings__InputContainer">
+      <label>First Name</label>
+      <input type="text" [(ngModel)]="user.firstName" />
+    </div>
+    <div class="ProfileSettings__InputContainer">
+      <label>Last Name</label>
+      <input type="text" [(ngModel)]="user.lastName" />
+    </div>
+    <input type="button" value="Save" (click)="saveUser()" />
+  </div>
+
+  <p *ngIf="laodingProfile">Loading Profile...</p>
+  <p *ngIf="savingProfile">Saving Profile...</p>
+  <p *ngIf="errorMessage">
+    <span>Error! </span>
+    <span>{{ errorMessage }}</span>
+  </p>
+</div>
