@@ -4,6 +4,9 @@
     <div class="ProfileSettings__UserName">
       <span>Username</span> : <span>{{ user?.username }}</span>
     </div>
+    <div class="ProfileSettings__UserName">
+      <span>Email</span> : <span>{{ user?.email }}</span>
+    </div>
     <div class="ProfileSettings__InputContainer">
       <app-text-input label="First Name" [(inputModel)]="user.firstName">
       </app-text-input>
@@ -21,6 +24,4 @@
     <span>Error! </span>
     <span>{{ errorMessage }}</span>
   </p>
-
-  <pre>{{ user | json }}</pre>
 </div>

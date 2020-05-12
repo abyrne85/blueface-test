@@ -2,10 +2,9 @@
   background-color: transparent;
   border: 2px solid var(--green);
   border-radius: 0.6em;
+  font-size: 1em;
   color: var(--green);
-  align-self: center;
-  font-size: 1rem;
-  padding: 1.2em 2.8em;
+  padding: 0.6em 1.4em;
   text-align: center;
   text-transform: uppercase;
   font-weight: 700;

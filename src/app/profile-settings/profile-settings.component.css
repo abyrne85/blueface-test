@@ -1,6 +1,7 @@
 .ProfileSettings {
   padding: 1em;
   height: 100%;
+  color: var(--dark);
 }
 
 .ProfileSettings__InputContainer,
