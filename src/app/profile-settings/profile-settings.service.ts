@@ -33,9 +33,11 @@ export class ProfileSettingsService {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         if (Math.round(Math.random())) {
-          this.user.firstName = this.trimAndLower(user.firstName);
-          this.user.lastName = this.trimAndLower(user.lastName);
-          this.user.username = `${this.user.firstName}.${this.user.lastName}`;
+          this.user.firstName = user.firstName;
+          this.user.lastName = user.lastName;
+          this.user.username = `${this.trimAndLower(
+            this.user.firstName
+          )}.${this.trimAndLower(this.user.lastName)}`;
           resolve(this.user);
         } else {
           reject({ message: 'PROFILE.ERROR_MESSAGES.INVALID_NAME' });
@@ -48,7 +50,9 @@ export class ProfileSettingsService {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         if (Math.round(Math.random())) {
-          this.user.email = `${this.user.firstName}.${this.user.lastName}@blueface.com`;
+          this.user.email = `${this.trimAndLower(
+            this.user.firstName
+          )}.${this.trimAndLower(this.user.lastName)}@blueface.com`;
           resolve(this.user);
         } else {
           reject({ message: 'PROFILE.ERROR_MESSAGES.EMAIL_ERROR' });

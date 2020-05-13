@@ -1,4 +1,3 @@
-import { LANGUAGES } from './constants/languages';
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -8,12 +7,8 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  constructor(private _translateService: TranslateService) {}
-
-  languages = LANGUAGES;
-  title = 'blueface-test';
-
-  setLanguage(language) {
-    this._translateService.use(language);
+  constructor(private _tranlsateService: TranslateService) {
+    const browserLanguage = this._tranlsateService.getBrowserLang();
+    this._tranlsateService.use(browserLanguage);
   }
 }

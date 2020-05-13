@@ -1,0 +1,23 @@
+.Header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &__Logo {
+    max-width: 200px;
+    margin: 1em 0px;
+  }
+  &__LanguageList {
+    margin: 1em 0;
+    list-style: none;
+    padding: 0;
+  }
+  &__LanguageListItem {
+    display: inline;
+    padding: 1em;
+    cursor: pointer;
+
+    &--active {
+      text-decoration: underline;
+    }
+  }
+}

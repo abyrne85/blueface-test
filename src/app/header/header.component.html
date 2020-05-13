@@ -1,0 +1,19 @@
+<div class="Header">
+  <img
+    class="Header__Logo"
+    src="../../assets/images/svgs/blueface-logo.svg"
+    alt="Blueface Logo"
+  />
+  <ul class="Header__LanguageList">
+    <li
+      *ngFor="let language of languages"
+      [ngClass]="{
+        'Header__LanguageListItem--active': currentLanguage === language.key
+      }"
+      (click)="setLanguage(language)"
+      class="Header__LanguageListItem"
+    >
+      {{ language.name }}
+    </li>
+  </ul>
+</div>

@@ -8,7 +8,9 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class TextInputComponent implements OnInit {
   @Input() label: string;
   @Input() inputModel: string;
+  @Input() disabled: boolean;
   @Output() inputModelChange = new EventEmitter<string>();
+
   constructor() {}
 
   ngOnInit() {}

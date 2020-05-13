@@ -10,6 +10,7 @@
     </div>
     <div class="ProfileSettings__InputContainer">
       <app-text-input
+        [disabled]="savingProfile"
         label="{{ 'FIRST_NAME' | translate }}"
         [(inputModel)]="user.firstName"
       >
@@ -17,6 +18,7 @@
     </div>
     <div class="ProfileSettings__InputContainer">
       <app-text-input
+        [disabled]="savingProfile"
         label="{{ 'LAST_NAME' | translate }}"
         [(inputModel)]="user.lastName"
       >
@@ -25,13 +27,15 @@
     <app-button buttonText="Save" (action)="saveUser()"></app-button>
   </div>
 
-  <p class="ProfileSettings__Elipses" *ngIf="loadingProfile">
+  <p *ngIf="loadingProfile">
     {{ 'PROFILE.LOADING' | translate }}
   </p>
-  <p class="ProfileSettings__Elipses" *ngIf="savingProfile">
+  <p *ngIf="savingProfile">
     {{ 'PROFILE.SAVING' | translate }}
   </p>
-  <p *ngIf="errorMessage">
+  <p class="ProfileSettings__Warning" *ngIf="errorMessage">
     <span>{{ errorMessage | translate }}</span>
   </p>
 </div>
+
+<pre>{{ user | json }}</pre>

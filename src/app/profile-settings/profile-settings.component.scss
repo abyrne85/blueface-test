@@ -6,6 +6,10 @@
 
   &__InputContainer,
   &__UserName {
-    margin-bottom: 0.75em;
+    margin-bottom: 1em;
+  }
+
+  &__Warning {
+    color: $red;
   }
 }
