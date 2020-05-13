@@ -1,5 +1,5 @@
-import { Injectable } from "@angular/core";
-import { MOCK_USER } from "src/mocks/mock-user";
+import { Injectable } from '@angular/core';
+import { MOCK_USER } from 'src/mocks/mock-user';
 export interface IProfile {
   firstName: string;
   lastName: string;
@@ -10,7 +10,7 @@ export interface IProfile {
 
 const MOCK_TIMEOUT: number = 1000;
 @Injectable({
-  providedIn: "root",
+  providedIn: 'root',
 })
 export class ProfileSettingsService {
   user: IProfile;
@@ -23,7 +23,7 @@ export class ProfileSettingsService {
           this.user = MOCK_USER;
           resolve(this.user);
         } else {
-          reject({ error: "Profile not found" });
+          reject({ error: 'Profile not found' });
         }
       }, Math.random() * MOCK_TIMEOUT);
     });
@@ -35,9 +35,10 @@ export class ProfileSettingsService {
         if (Math.round(Math.random())) {
           this.user.firstName = user.firstName;
           this.user.lastName = user.lastName;
+          this.user.username = `${user.firstName}.${user.lastName}`;
           resolve(this.user);
         } else {
-          reject({ message: "Invalid name" });
+          reject({ message: 'Invalid name' });
         }
       }, Math.random() * MOCK_TIMEOUT);
     });
@@ -50,7 +51,7 @@ export class ProfileSettingsService {
           this.user.email = `${this.user.firstName.trim()}.${this.user.lastName.trim()}@blueface.com`;
           resolve(this.user);
         } else {
-          reject({ message: "Error on Email Generation" });
+          reject({ message: 'Error on Email Generation' });
         }
       }, Math.random() * MOCK_TIMEOUT);
     });

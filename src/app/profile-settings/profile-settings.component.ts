@@ -1,13 +1,14 @@
-import { Component, OnInit } from "@angular/core";
-import { IProfile, ProfileSettingsService } from "./profile-settings.service";
+import { Component, OnInit } from '@angular/core';
+import { IProfile, ProfileSettingsService } from './profile-settings.service';
 
 @Component({
-  selector: "app-profile-settings",
-  templateUrl: "./profile-settings.component.html",
-  styleUrls: ["./profile-settings.component.css"],
+  selector: 'app-profile-settings',
+  templateUrl: './profile-settings.component.html',
+  styleUrls: ['./profile-settings.component.css'],
 })
 export class ProfileSettingsComponent implements OnInit {
-  title: string = "Profile";
+  title: string = 'Profile';
+
   loadingProfile: boolean = false;
   savingProfile: boolean = false;
   error: boolean = false;

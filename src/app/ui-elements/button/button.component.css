@@ -1,5 +1,5 @@
 .Button {
-  background-color: transparent;
+  background-color: white;
   border: 2px solid var(--green);
   border-radius: 0.6em;
   font-size: 1em;
@@ -8,7 +8,7 @@
   text-align: center;
   text-transform: uppercase;
   font-weight: 700;
-  transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+  transition: box-shadow 200ms ease-in-out, color 200ms ease-in-out;
 }
 
 .Button:hover {
