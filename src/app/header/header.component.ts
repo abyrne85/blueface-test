@@ -17,8 +17,9 @@ export class HeaderComponent implements OnInit {
     this.currentLanguage = this._translateService.currentLang;
   }
 
-  setLanguage(language) {
-    this._translateService.use(language.key);
-    this.currentLanguage = language.key;
+  setLanguage(key) {
+    this._translateService.use(key);
+    this.currentLanguage = key;
+    localStorage.setItem('selectedLanguage', key);
   }
 }

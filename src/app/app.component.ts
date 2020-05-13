@@ -8,7 +8,9 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class AppComponent {
   constructor(private _tranlsateService: TranslateService) {
-    const browserLanguage = this._tranlsateService.getBrowserLang();
-    this._tranlsateService.use(browserLanguage);
+    const selectedLanguage =
+      localStorage.getItem('selectedLanguage') ||
+      this._tranlsateService.getBrowserLang();
+    this._tranlsateService.use(selectedLanguage);
   }
 }

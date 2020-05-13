@@ -4,16 +4,13 @@
     src="../../assets/images/svgs/blueface-logo.svg"
     alt="Blueface Logo"
   />
-  <ul class="Header__LanguageList">
-    <li
-      *ngFor="let language of languages"
-      [ngClass]="{
-        'Header__LanguageListItem--active': currentLanguage === language.key
-      }"
-      (click)="setLanguage(language)"
-      class="Header__LanguageListItem"
-    >
-      {{ language.name }}
-    </li>
-  </ul>
+  <select
+    class="Header__LanguageSelect"
+    [(ngModel)]="currentLanguage"
+    (change)="setLanguage($event.target.value)"
+  >
+    <option *ngFor="let language of languages" [value]="language.key">{{
+      language.name
+    }}</option>
+  </select>
 </div>
