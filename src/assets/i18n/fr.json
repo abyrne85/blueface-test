@@ -3,6 +3,7 @@
     "USERNAME": "Nom d'utilisateur",
     "FIRST_NAME": "Prénom",
     "LAST_NAME": "Nom de Famille",
+    "SAVE": "Enregistrer",
     "PROFILE": {
         "TITLE": "Profil",
         "SAVING": "Enregistrement du profil",

@@ -62,6 +62,6 @@ export class ProfileSettingsService {
   }
 
   private trimAndLower(text: string) {
-    return text.trim().toLowerCase();
+    return text.replace(/ /g, '').toLowerCase();
   }
 }

@@ -5,11 +5,18 @@
   color: $dark;
 
   &__InputContainer,
-  &__UserName {
+  &__UserName,
+  &__Email {
     margin-bottom: 1em;
   }
 
-  &__Warning {
-    color: $red;
+  &__UserName,
+  &__Email {
+    font-size: 1.2em;
+    font-weight: 300;
+  }
+
+  &__Form {
+    margin-bottom: 1.2em;
   }
 }

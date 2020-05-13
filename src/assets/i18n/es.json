@@ -3,6 +3,7 @@
     "USERNAME": "Nombre de usuario",
     "FIRST_NAME": "Nombre de pila",
     "LAST_NAME": "Apellido",
+    "SAVE": "Salvar",
     "PROFILE": {
         "TITLE": "Perfil",
         "SAVING": "Guardar perfil",

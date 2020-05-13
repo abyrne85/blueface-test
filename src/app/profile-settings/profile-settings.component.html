@@ -1,11 +1,13 @@
 <div class="ProfileSettings">
-  <h1>{{ 'PROFILE.TITLE' | translate }}</h1>
-  <div *ngIf="user">
+  <div>
+    <h1>{{ 'PROFILE.TITLE' | translate }}</h1>
+  </div>
+  <div *ngIf="user" class="ProfileSettings__Form">
     <div class="ProfileSettings__UserName">
       <span>{{ 'USERNAME' | translate }}</span> :
       <span>{{ user?.username }}</span>
     </div>
-    <div class="ProfileSettings__UserName">
+    <div class="ProfileSettings__Email">
       <span>{{ 'EMAIL' | translate }}</span> : <span>{{ user?.email }}</span>
     </div>
     <div class="ProfileSettings__InputContainer">
@@ -24,16 +26,26 @@
       >
       </app-text-input>
     </div>
-    <app-button buttonText="Save" (action)="saveUser()"></app-button>
+    <app-button
+      [buttonText]="'SAVE' | translate"
+      (action)="saveUser()"
+      [spinner]="savingProfile"
+    ></app-button>
   </div>
 
-  <p *ngIf="loadingProfile">
-    {{ 'PROFILE.LOADING' | translate }}
-  </p>
-  <p *ngIf="savingProfile">
-    {{ 'PROFILE.SAVING' | translate }}
-  </p>
-  <p class="ProfileSettings__Warning" *ngIf="errorMessage">
-    <span>{{ errorMessage | translate }}</span>
-  </p>
+  <app-feedback-message
+    *ngIf="loadingProfile"
+    [message]="'PROFILE.LOADING' | translate"
+    type="progress"
+  ></app-feedback-message>
+  <app-feedback-message
+    *ngIf="savingProfile"
+    [message]="'PROFILE.SAVING' | translate"
+    type="progress"
+  ></app-feedback-message>
+  <app-feedback-message
+    *ngIf="errorMessage"
+    [message]="errorMessage | translate"
+    type="error"
+  ></app-feedback-message>
 </div>
