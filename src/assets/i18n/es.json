@@ -1,0 +1,16 @@
+{
+    "EMAIL": "Correo electrónico",
+    "USERNAME": "Nombre de usuario",
+    "FIRST_NAME": "Nombre de pila",
+    "LAST_NAME": "Apellido",
+    "PROFILE": {
+        "TITLE": "Perfil",
+        "SAVING": "Guardar perfil",
+        "LOADING": "Cargando perfil",
+        "ERROR_MESSAGES": {
+            "PROFILE_NOT_FOUND": "Perfil no encontrado",
+            "INVALID_NAME": "Nombre inválido",
+            "EMAIL_ERROR": "Error en la generación de correo electrónico"
+        }
+    }
+}

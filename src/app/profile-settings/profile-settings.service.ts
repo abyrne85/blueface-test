@@ -23,7 +23,7 @@ export class ProfileSettingsService {
           this.user = MOCK_USER;
           resolve(this.user);
         } else {
-          reject({ error: 'Profile not found' });
+          reject({ error: 'PROFILE.ERROR_MESSAGES.PROFILE_NOT_FOUND' });
         }
       }, Math.random() * MOCK_TIMEOUT);
     });
@@ -33,12 +33,12 @@ export class ProfileSettingsService {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         if (Math.round(Math.random())) {
-          this.user.firstName = user.firstName;
-          this.user.lastName = user.lastName;
-          this.user.username = `${user.firstName}.${user.lastName}`;
+          this.user.firstName = this.trimAndLower(user.firstName);
+          this.user.lastName = this.trimAndLower(user.lastName);
+          this.user.username = `${this.user.firstName}.${this.user.lastName}`;
           resolve(this.user);
         } else {
-          reject({ message: 'Invalid name' });
+          reject({ message: 'PROFILE.ERROR_MESSAGES.INVALID_NAME' });
         }
       }, Math.random() * MOCK_TIMEOUT);
     });
@@ -48,12 +48,16 @@ export class ProfileSettingsService {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         if (Math.round(Math.random())) {
-          this.user.email = `${this.user.firstName.trim()}.${this.user.lastName.trim()}@blueface.com`;
+          this.user.email = `${this.user.firstName}.${this.user.lastName}@blueface.com`;
           resolve(this.user);
         } else {
-          reject({ message: 'Error on Email Generation' });
+          reject({ message: 'PROFILE.ERROR_MESSAGES.EMAIL_ERROR' });
         }
       }, Math.random() * MOCK_TIMEOUT);
     });
+  }
+
+  private trimAndLower(text: string) {
+    return text.trim().toLowerCase();
   }
 }

@@ -1,0 +1,16 @@
+{
+    "EMAIL": "Email",
+    "USERNAME": "Username",
+    "FIRST_NAME": "First Name",
+    "LAST_NAME": "Last Name",
+    "PROFILE": {
+        "TITLE": "Profile",
+        "SAVING": "Saving Profile",
+        "LOADING": "Loading Profile",
+        "ERROR_MESSAGES": {
+            "PROFILE_NOT_FOUND": "Profile Not Found",
+            "INVALID_NAME": "Invalid Name",
+            "EMAIL_ERROR": "Error on Email Generation"
+        }
+    }
+}

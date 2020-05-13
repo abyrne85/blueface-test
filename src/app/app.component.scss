@@ -1,0 +1,26 @@
+@import '../styles/variables.scss';
+.App {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  background: $grey;
+  flex-direction: column;
+  align-items: center;
+
+  &__Header {
+    width: 100%;
+    background: white;
+    margin-bottom: 2em;
+    display: flex;
+    justify-content: center;
+  }
+  &__HeaderContainer {
+    width: 100%;
+    max-width: 900px;
+  }
+  &__MainContent {
+    width: 100%;
+    max-width: 900px;
+    background-color: $light;
+  }
+}

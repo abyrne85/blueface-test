@@ -1,0 +1,16 @@
+@import '../../../styles/variables.scss';
+
+.Button {
+  background: $green;
+  border: none;
+  border-radius: 0.6em;
+  font-size: 1em;
+  padding: 0.6em 1.4em;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: white;
+  &:hover {
+    background: lighten($green, 10);
+  }
+}

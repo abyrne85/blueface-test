@@ -1,4 +1,16 @@
 <div class="App">
+  <div class="App__Header">
+    <div class="App__HeaderContainer">
+      <ul class="App__LanguageList">
+        <li
+          *ngFor="let language of languages"
+          (click)="setLanguage(language.key)"
+        >
+          {{ language.name }}
+        </li>
+      </ul>
+    </div>
+  </div>
   <div class="App__MainContent">
     <app-profile-settings></app-profile-settings>
   </div>

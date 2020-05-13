@@ -1,22 +1,29 @@
 import { Component, OnInit } from '@angular/core';
 import { IProfile, ProfileSettingsService } from './profile-settings.service';
+import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-profile-settings',
   templateUrl: './profile-settings.component.html',
-  styleUrls: ['./profile-settings.component.css'],
+  styleUrls: ['./profile-settings.component.scss'],
 })
 export class ProfileSettingsComponent implements OnInit {
-  title: string = 'Profile';
-
   loadingProfile: boolean = false;
   savingProfile: boolean = false;
   error: boolean = false;
   user: IProfile;
   errorMessage: string;
-  constructor(private _profileSettingsService: ProfileSettingsService) {}
+  constructor(
+    private _profileSettingsService: ProfileSettingsService,
+    private _translateService: TranslateService
+  ) {
+    this._translateService.onLangChange.subscribe((event: LangChangeEvent) => {
+      console.log(event);
+    });
+  }
 
   ngOnInit() {
+    this._translateService.setDefaultLang('en');
     this.fetchUser();
   }
 

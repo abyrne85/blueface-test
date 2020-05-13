@@ -1,0 +1,11 @@
+@import '../../styles/variables.scss';
+.ProfileSettings {
+  padding: 1em;
+  min-height: 500px;
+  color: $dark;
+
+  &__InputContainer,
+  &__UserName {
+    margin-bottom: 0.75em;
+  }
+}
