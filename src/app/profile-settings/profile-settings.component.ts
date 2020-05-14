@@ -7,12 +7,13 @@ import { IProfile, ProfileSettingsService } from './profile-settings.service';
   styleUrls: ['./profile-settings.component.scss'],
 })
 export class ProfileSettingsComponent implements OnInit {
-  loadingProfile: boolean = false;
-  savingProfile: boolean = false;
-  error: boolean = false;
+  loadingProfile: boolean;
+  savingProfile: boolean;
+  error: boolean;
   user: IProfile;
   errorMessage: string;
   updateSuccesful: boolean;
+
   constructor(private _profileSettingsService: ProfileSettingsService) {}
 
   ngOnInit() {
@@ -35,8 +36,8 @@ export class ProfileSettingsComponent implements OnInit {
     this.updateSuccesful = false;
 
     try {
-      await this._profileSettingsService.setName(this.user);
-      this.user = await this._profileSettingsService.setUserEmail();
+      this.user = await this._profileSettingsService.setName(this.user);
+      this.user = await this._profileSettingsService.setUserEmail(this.user);
       this.savingProfile = false;
       this.updateSuccesful = true;
     } catch (error) {

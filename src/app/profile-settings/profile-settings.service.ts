@@ -8,7 +8,7 @@ export interface IProfile {
   email?: string;
 }
 
-const MOCK_TIMEOUT: number = 5000;
+const MOCK_TIMEOUT: number = 1000;
 @Injectable({
   providedIn: 'root',
 })
@@ -46,13 +46,13 @@ export class ProfileSettingsService {
     });
   }
 
-  setUserEmail(): Promise<IProfile> {
+  setUserEmail(user: IProfile): Promise<IProfile> {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         if (Math.round(Math.random())) {
           this.user.email = `${this.trimAndLower(
-            this.user.firstName
-          )}.${this.trimAndLower(this.user.lastName)}@blueface.com`;
+            user.firstName
+          )}.${this.trimAndLower(user.lastName)}@blueface.com`;
           resolve(this.user);
         } else {
           reject({ message: 'PROFILE.ERROR_MESSAGES.EMAIL_ERROR' });
