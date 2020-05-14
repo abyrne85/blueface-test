@@ -1,3 +1,4 @@
+import { UiElementsModule } from './../ui-elements.module';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TextInputComponent } from './text-input.component';
@@ -8,9 +9,8 @@ describe('TextInputComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TextInputComponent ]
-    })
-    .compileComponents();
+      imports: [UiElementsModule],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
