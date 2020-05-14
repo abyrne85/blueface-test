@@ -8,6 +8,7 @@
         "TITLE": "Profil",
         "SAVING": "Enregistrement du profil",
         "LOADING": "Chargement du profil",
+        "UPDATE_SUCCESS": "Détails de l'utilisateur mis à jour avec succès",
         "ERROR_MESSAGES": {
             "PROFILE_NOT_FOUND": "Profil non trouvé",
             "INVALID_NAME": "Nom incorrect",

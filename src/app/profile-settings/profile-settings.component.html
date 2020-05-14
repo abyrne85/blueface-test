@@ -48,4 +48,9 @@
     [message]="errorMessage | translate"
     type="error"
   ></app-feedback-message>
+  <app-feedback-message
+    *ngIf="updateSuccesful"
+    [message]="'PROFILE.UPDATE_SUCCESS' | translate"
+    type="success"
+  ></app-feedback-message>
 </div>

@@ -6,6 +6,9 @@
   &--error {
     color: $red;
   }
+  &--success {
+    color: $green;
+  }
 
   &__LoadingRing {
     display: inline-block;

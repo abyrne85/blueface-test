@@ -1,9 +1,13 @@
 <div class="FeedbackMessage FeedbackMessage--{{ type }}">
   <span *ngIf="type === 'error'">
     <span>&#33;</span>
-
     {{ message }}
   </span>
+  <span *ngIf="type === 'success'">
+    <span>&#33;</span>
+    {{ message }}
+  </span>
+
   <div *ngIf="type === 'progress'">
     <span class="FeedbackMessage__LoadingRing"> </span>
     <span>
