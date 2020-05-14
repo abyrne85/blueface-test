@@ -12,7 +12,6 @@ export class ProfileSettingsComponent implements OnInit {
   error: boolean = false;
   user: IProfile;
   errorMessage: string;
-  setNameSuccess: boolean;
 
   constructor(private _profileSettingsService: ProfileSettingsService) {}
 
@@ -34,10 +33,7 @@ export class ProfileSettingsComponent implements OnInit {
     this.savingProfile = true;
     this.errorMessage = null;
     try {
-      if (!this.setNameSuccess) {
-        await this._profileSettingsService.setName(this.user);
-        this.setNameSuccess = true;
-      }
+      await this._profileSettingsService.setName(this.user);
       this.user = await this._profileSettingsService.setUserEmail();
       this.savingProfile = false;
     } catch (error) {

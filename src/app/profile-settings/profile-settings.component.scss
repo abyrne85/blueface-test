@@ -2,9 +2,12 @@
 .ProfileSettings {
   padding: 1em;
   min-height: 500px;
-  color: $dark;
+  color: $grey;
 
-  &__InputContainer,
+  &__InputContainer {
+    margin-bottom: 1.8em;
+  }
+
   &__UserName,
   &__Email {
     margin-bottom: 1em;
