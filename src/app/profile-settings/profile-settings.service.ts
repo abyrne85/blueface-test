@@ -8,7 +8,7 @@ export interface IProfile {
   email?: string;
 }
 
-const MOCK_TIMEOUT: number = 1000;
+const MOCK_TIMEOUT: number = 5000;
 @Injectable({
   providedIn: 'root',
 })
@@ -23,7 +23,7 @@ export class ProfileSettingsService {
           this.user = MOCK_USER;
           resolve(this.user);
         } else {
-          reject({ error: 'PROFILE.ERROR_MESSAGES.PROFILE_NOT_FOUND' });
+          reject({ message: 'PROFILE.ERROR_MESSAGES.PROFILE_NOT_FOUND' });
         }
       }, Math.random() * MOCK_TIMEOUT);
     });
