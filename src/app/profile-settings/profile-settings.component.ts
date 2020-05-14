@@ -23,7 +23,7 @@ export class ProfileSettingsComponent implements OnInit {
   async fetchUser() {
     this.loadingProfile = true;
     try {
-      this.user = await this._profileSettingsService.getProfileUser();
+      this.user = await this._profileSettingsService.getUserProfile();
       this.loadingProfile = false;
     } catch (error) {
       this.fetchUser();

@@ -16,7 +16,7 @@ export class ProfileSettingsService {
   user: IProfile;
   constructor() {}
 
-  getProfileUser(): Promise<IProfile> {
+  getUserProfile(): Promise<IProfile> {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         if (Math.round(Math.random())) {
